@@ -1,11 +1,7 @@
 # HealthDesk
 
-## Project info
 
-**URL** : https://healthdesk-azure.vercel.app/
-**URL-II** : https://healthdesk-ten.vercel.app/
-
-### Requirements:
+## Requirements:
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
