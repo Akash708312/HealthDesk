@@ -1,0 +1,157 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 155 84.2% 41.2%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 155 90% 95%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 155 74.2% 40.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 155 80% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.5% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+  h1 {
+    @apply text-3xl sm:text-4xl lg:text-5xl;
+  }
+  h2 {
+    @apply text-2xl sm:text-3xl;
+  }
+  h3 {
+    @apply text-xl sm:text-2xl;
+  }
+}
+
+.feature-card {
+  @apply relative overflow-hidden rounded-xl border bg-white p-6 shadow-sm transition duration-300 hover:shadow-md;
+}
+
+.feature-card::before {
+  @apply absolute inset-0 bg-gradient-to-r from-primary-100/50 to-healthGreen-100/50 opacity-0 transition-opacity duration-300 content-[""] -z-10;
+}
+
+.feature-card:hover::before {
+  @apply opacity-100;
+}
+
+.health-input {
+  @apply w-full rounded-md border border-gray-200 p-2 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500;
+}
+
+.health-label {
+  @apply mb-1 block text-sm font-medium text-gray-700;
+}
+
+.health-button {
+  @apply inline-flex items-center justify-center rounded-md bg-primary-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+}
+
+.health-button-secondary {
+  @apply inline-flex items-center justify-center rounded-md bg-white px-4 py-2 font-medium text-primary-600 shadow-sm ring-1 ring-inset ring-primary-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary-600 to-healthGreen-500 bg-clip-text text-transparent;
+}
+
+.bg-dots {
+  background-image: radial-gradient(#3b82f6 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.ai-gradient {
+  @apply bg-gradient-to-r from-primary-600 via-blue-500 to-healthGreen-500;
+}
+
+/* Auth components styling */
+.auth-page {
+  @apply min-h-screen flex items-center justify-center bg-gradient-to-b from-primary-50 to-white;
+}
+
+.auth-form {
+  @apply bg-white rounded-lg shadow-lg p-8 max-w-md w-full;
+}
+
+.auth-input {
+  @apply w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
